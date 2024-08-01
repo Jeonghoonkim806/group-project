@@ -1,62 +1,71 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="jakarta.servlet.http.HttpSession" %>
+<%@ page import="java.sql.Connection" %>
+<%@ page import="java.sql.SQLException" %>
+<%@ page import="java.sql.PreparedStatement" %>
+<%@ page import="java.sql.ResultSet" %>
+<%@ page import="com.dobby.utils.DBManager" %>
+
+<%
+    String message = "";
+    if (request.getMethod().equalsIgnoreCase("POST")) {
+        String memberID = request.getParameter("memberID");
+        String memberPW = request.getParameter("memberPW");
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        try {
+            conn = DBManager.getDBConnection();
+            String sql = "SELECT * FROM members WHERE memberID = ? AND memberPW = ?";
+            pstmt = conn.prepareStatement(sql);
+            pstmt.setString(1, memberID);
+            pstmt.setString(2, memberPW);
+            rs = pstmt.executeQuery();
+            
+            if (rs.next()) {
+                HttpSession currentsession = request.getSession();
+                session.setAttribute("memberID", memberID);
+                response.sendRedirect("main.jsp");
+                return;
+            } else {
+                message = "Invalid username or password";
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+            message = "Error occurred during login: " + e.getMessage();
+        } catch (Exception e) {
+            e.printStackTrace();
+            message = "Error occurred during login";
+        } finally {
+            DBManager.dbClose(conn, pstmt, rs);
+        }
+    }
+%>
+
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset="UTF-8">
-<meta name="viewport" content="width=device-width", initial-scale="1">
-<link rel="stylesheet" href="css/bootstrap.css">
-<title>JSP 게시판 웹 사이트</title>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="./css/member.css">
 </head>
 <body>
-	<nav class="navbar navbar-default">
-		<div class="navbar-header">
-			<button type="button" class="navbar-toggle collapsed"
-				data-toggle="colla[se" data-target="#bs-example-navbar-collapse-1"
-				aria-expanded="false">
-					<span class="icon-bar"></span>	
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-			</button>
-			<a class="navbar-brand" href="main.jsp">JSP 게시판 웹 사이트</a>
-		</div>
-		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-			<ul class-"nav navbar-nav">
-				<li><a href="main.jsp">메인</a></li>
-				<li><a href="bbs.jsp">게시판</a></li>
-			</ul>
-			<ul class-"nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<a href="#" class="dropdown-toggle"
-						data-toggle="dropdown" role="button" aria-haspopup="true"
-						aria-expanded="false">접속하기<span class="caret"></span></a>
-					<ul class="dropdown-menu">
-						<li  class="active"><a href="login.jsp">로그인</a></li>
-						<li><a href="login.jsp">회원가입</a></li>
-					</ul>
-				</li>
-			</ul>
-		</div>
-	</nav>
-	<div class="container">
-		<div class="col-lg-4"></div>
-		<div class="col-lg-4">
-			<div class="jumbotron" style="padding-top: 20px;">
-				<from method="post" action="ioginAction.jsp">
-					<h3 style="text-align: center;">로그인 화면</h3>
-					<div class="from-group">
-						<input type="text" class="form-control" placeholder="아이디" name="userID" maxlength="20">
-					</div>
-					<div class="from-group">
-						<input type="password" class="form-control" placeholder="비밀번호" name="userPassword" maxlength="20">
-					</div>
-					<input type="submit" classs="byn btn-primary form-control" value="로그인">
-				</from>
-			</div>
-		</div>
-		<div class="col-lg-4"></div>
-	</div>
-	<script src="http://code.jquery.com/jquery-3.1.1min.js"></script>
-	<script src="js/bootstrap.js"></script>
+    <div class="container">
+        <div class="login-box">
+            <h2>Login</h2>
+            <form method="post" action="login.jsp">
+                <div class="textbox">
+                    <input type="text" placeholder="Username" name="memberID" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" placeholder="Password" name="memberPW" required>
+                </div>
+                <button type="submit" class="btn">Login</button>
+            </form>
+            <p><%= message %></p>
+            <p>Don't have an account? <a href="register.jsp">Register here</a></p>
+        </div>
+    </div>
 </body>
 </html>
