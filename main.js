@@ -41,12 +41,13 @@ $(document).ready(function() {
         const seq = $(this).data('seq');
         window.location.href = 'videomain.jsp?seq=' + seq;
     });
+    
 
     // upload 이미지 클릭 시 메시지 박스 띄우기
     $('#uploadIcon').on('click', function(){
         $('#myModal').show();
     });
-    $('.close').on('click', function() {
+    $('#cancel-upload').on('click', function() {
         $('#myModal').hide();
     });
     $(window).on('click', function(event) {
@@ -71,4 +72,8 @@ $(document).ready(function() {
     $('#board-button').click(function() {
         window.location.href = 'board.jsp';
     });
+    
+    $("#my-video").click(function() {
+		window.location.href = 'my_video.jsp';
+	});
 });
