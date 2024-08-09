@@ -1,0 +1,404 @@
+*{
+    font-family:"Roboto", Arial, sans-serif;
+    font-style: normal;
+    margin:0;
+    padding: 0;
+    border: none;
+    box-sizing: border-box;
+    
+}
+
+body,html{
+    height: 100%;
+}
+body{
+    min-width: 320px;
+    box-sizing: border-box;
+}
+button{
+    background-color: inherit;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    padding: 0;
+    overflow: visible;
+    cursor: pointer;
+}
+fieldset, img{
+    border:0;
+}
+a {
+    text-decoration: 0;
+}
+.blind{
+    overflow:hidden;
+    position:absolute;
+    clip:rect(0 0 0 0);
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+}
+svg{
+    display: bl;
+}
+
+/* ------ HEADER ------ */
+
+.header{
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height: 70px;
+    padding:15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    z-index: 1000;
+}
+.hidden {
+    display: none;
+}
+
+.header_logo{
+    display: flex;
+    align-items: center;
+}
+.header_logo img{
+    max-width: 150px;
+    margin-left: 15px;
+}
+.header i{
+    padding:0 8px;
+    margin-left: .5rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    color: #606060;
+}
+.header .search{
+    border-radius: 65%;
+}
+.header .search form{
+    height: 35px;
+    display: flex;
+    border: 2px solid #ddd;
+}
+.search .search-inner{
+    display: flex;
+    align-items: center;
+    padding: 5px 15px;
+ 
+}
+
+.search .search-inner img{
+    display: flex;
+    height: 12px;
+    margin-right: 10px;
+}
+.search input{
+    width: 500px;
+    height: 100%;
+    border: none;
+    outline: none;
+}
+.search input::placeholder{
+    padding-left: .6rem;
+    color: #888;
+}
+.search-inner button{
+    background: transparent;
+    border:none;
+    cursor: pointer;
+}
+.search-inner button:active{
+    opacity: .8
+}
+
+
+/* ------ MAIN ------ */
+.YtBody{
+    margin-top: 70px;
+    display: flex;
+    overflow: hidden;
+    height: calc(100vh -70px);
+}
+/* SideBar Style */
+.sidebar{
+    display: block;
+    width: 240px;
+    height: calc(100vh - 70px);
+    background-color: #fff;
+    box-sizing: border-box;
+    position: fixed; 
+    overflow-y: auto;
+    top: 70px;
+    left: 0;
+    transition: left 0.3s ease;
+}
+
+.sidebar.hidden {
+    left: -240px;
+
+}
+.sidebar_nav{
+    padding: 10px;
+}
+.nav-item{
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+.nav-item i {
+    font-size: 20px;
+    margin-right: 10px;
+}
+.nav-item span{
+    margin-left: 15px;
+}
+.nav-item:hover{
+    
+    background: #bdbdbd;
+}
+
+.sub-menu {
+    display: none;
+    padding-left: 20px;
+    
+}
+.nav-item.items {
+    padding-left: 20px;
+}
+.nav-item.items:hover {
+    background-color: #e0e0e0;
+}
+
+hr{
+    height: 1px;
+    background: #bdbdbd;
+}
+.sidebar::-webkit-scrollbar{
+    display:none;
+}
+i{
+    color:rgb(96,96,96);
+}
+
+.board_items {
+	display: flex;
+	justify-content: space-between;
+    align-items: center;
+}
+
+.board__write__items ul {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.sch__items {
+	display: flex;
+	justify-content: flex-end;
+	margin: 18px 0;
+	background-color: rgb(244,244,242);
+	padding: 20px;
+}
+
+/* 게시글 박스 스타일 */
+.board__list {
+	margin-top: 34px;
+}
+.board__list .board_header {
+	width: 100%;
+	display: flex;
+	padding: 20px 0;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+.board__list .board_header .board_no,
+.board__list .board_header .board_title,
+.board__list .board_header .board_regdate,
+.board__list .board_header .board_hit {
+	text-align: center;
+	font-size: 15px;
+	font-weight: 900;
+	letter-spacing: -1px;
+}
+.board__list .board_header .board_no {
+	width: 15%;
+}
+.board__list .board_header .board_title {
+	width: 25%;
+}
+.board__list .board_header .board_writer {
+	width: 30%;
+}
+.board__list .board_header .board_regdate {
+	width: 20%;
+}
+.board__list .board_header .board_hit {
+	width: 10%;
+}
+
+.board__list .board__list__items {
+}
+.board__list .board__list__items ul {
+	display: flex;
+	width: 100%;
+}
+.board__list .board__list__items ul li {
+	padding: 12px 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e5e5e5;
+}
+.board__list .board__list__items ul li:nth-child(1) {
+	width: 15%;
+	text-align: center;
+}
+.board__list .board__list__items ul li:nth-child(2) {
+	padding-left: 20px;
+	width: 30%;
+}
+.board__list .board__list__items ul li:nth-child(2) a {
+	color: #000;
+	text-decoration: none; 
+}
+.board__list .board__list__items ul li:nth-child(2) a:hover {
+	text-decoration: underline;
+}
+.board__list .board__list__items ul li:nth-child(3) {
+	padding-left: 20px;
+	width: 15%;
+}
+.board__list .board__list__items ul li:nth-child(3) a {
+	color: #000;
+	text-decoration: none; 
+}
+.board__list .board__list__items ul li:nth-child(3) a:hover {
+	text-decoration: underline;
+}
+.board__list .board__list__items ul li:nth-child(4) {
+	width: 20%;
+	text-align: center;
+}
+.board__list .board__list__items ul li:nth-child(5) {
+	width: 20%;
+	text-align: center;
+}
+
+/* 게시글 상세글 박스 스타일 */
+.board__detail {
+	margin-top: 34px;
+}
+.board__detail .board_detail_header {
+	width: 100%;
+	display: flex;
+	padding: 20px 0;
+	justify-content: space-between;
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+.board__detail .board_detail_header .board_detail_title,
+.board__detail .board_detail_header .board_detail_title_icon {
+	font-size: 18px;
+	font-weight: 900;
+}
+.board__detail .board_detail_header .board_detail_title {
+	/* background-color: orange; */
+	/* text-align: left; */
+	margin-left: 30px;
+}
+.board__detail .board_detail_header .board_detail_title_icon {
+	/* background-color: royalblue; */
+	/* text-align: right; */
+	margin-right: 30px;
+}
+.board__detail .board_detail_header .board_detail_writer {
+	margin-right: 30px;
+}
+.board__detail .board_detail_content {
+	padding: 20px 0;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e5e5e5;
+}
+.board__detail .board_detail_list_btn {
+	display: flex;
+	justify-content: flex-end;
+}
+.board__detail .board_detail_list_btn a.board-list-btn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 70px;
+	height: 45px;
+	flex-shrink: 0;
+	border-radius: 3px;
+	background-color: #777;
+	text-decoration: none;
+	color: #fff;
+	font-size: 14px;
+	font-weight: 900;
+	margin-top: 20px;
+	
+}
+
+.board_detail_bottom {
+	margin-top: 122px;
+	margin-bottom: 60px;
+	/* margin: 121px 0; */
+}
+.sub_detail_btm {
+	/* padding: 70px 0; */
+	border-top-width: 1px;
+	border-top-style: solid;
+	border-top-color: #000;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #000;
+}
+.sub_detail_btm .bottom__prev, 
+.sub_detail_btm .bottom__next {
+	display: flex;
+	height: 50px;
+	font-size: 14px;
+	align-items: center;
+	position: relative;
+}
+.sub_detail_btm .bottom__prev {
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: #e5e5e5;
+}
+.sub_detail_btm .bottom__next  {
+	
+}
+.sub_detail_btm .nd_btm_left,
+.sub_detail_btm .nd_btm_right {
+	padding-left: 20px;
+}
+.sub_detail_btm .nd_btm_left  {
+	width: 13.5vw;
+	font-weight: bold;
+	height: 50px;
+	background-color: rgb(244,244,242);
+	display: flex;
+ 	align-items: center;
+ 	/* font-family: 'Apple SD Gothic Neo', 'NotoSans', '-apple-system', sans-serif; */
+ 	font-size: 14px;
+ 	color: #222222;
+}
+.sub_detail_btm .nd_btm_right  {
+	width: auto;
+	color: #666;
+}
