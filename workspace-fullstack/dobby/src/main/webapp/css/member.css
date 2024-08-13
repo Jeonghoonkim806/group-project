@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+body {
+    width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../images/background1.jpg') !important; /* 강제로 적용 */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.header_icons #my_id{
+	color: #63CC63;
+	margin-right: 10px;
+}
+
+/* Container for the login box */
+.container {
+    width: 100%;
+    max-width: 500px; /* Slightly wider for better usability */
+    padding: 30px;
+    background: #ffffff; /* White background for the login box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    text-align: center;
+}
+
+/* Header and Titles */
+.login-box, .register-box {
+    text-align: center;
+}
+
+h2 {
+   	margin: 0 0 20px;
+    font-size: 24px; /* Larger title font for emphasis */
+    color: #333; /* Darker text color for better readability */
+}
+
+.textbox {
+    margin: 15px 0;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.textbox.gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textbox.gender label {
+    margin: 0 10px;
+}
+
+.textbox.gender input[type="radio"] {
+    margin: 0 5px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+p {
+    margin: 10px 0;
+}
+
+a {
+    color: #4CAF50;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+.logout-btn {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.logout-btn:hover {
+    background-color: #45a049;
+}
