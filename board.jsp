@@ -264,20 +264,23 @@
                         }
                         int totalPages = (int) Math.ceil((double) totalRecords / recordsPerPage);
                     %>
+                    <br><br>
                 </div>
-            </section>
-            <div class="pagination">
-                <% if (currentPage > 1) { %>
-                    <a href="?page=<%= currentPage - 1 %>">&laquo; Previous</a>
-                <% } %>
-                <% for (int i = 1; i <= totalPages; i++) { %>
-                    <a href="?page=<%= i %>" class="<%= (i == currentPage) ? "active" : "" %>"><%= i %></a>
-                <% } %>
-                <% if (currentPage < totalPages) { %>
-                    <a href="?page=<%= currentPage + 1 %>">Next &raquo;</a>
-                <% } %>
-            </div>    
+                
+                <div class="pagination">
+                	<% if (currentPage > 1) { %>
+                    	<a href="?page=<%= currentPage - 1 %>">&laquo; Previous</a>
+               		<% } %>
+                	<% for (int i = 1; i <= totalPages; i++) { %>
+                    	<a href="?page=<%= i %>" class="<%= (i == currentPage) ? "active" : "" %>"><%= i %></a>
+                	<% } %>
+                	<% if (currentPage < totalPages) { %>
+                    	<a href="?page=<%= currentPage + 1 %>">Next &raquo;</a>
+                	<% } %>
+            	</div>    
+            </section> 
         </div>
     </div>
 </body>
 </html>
+//http://localhost:8080/doby/board.jsp

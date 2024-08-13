@@ -22,7 +22,7 @@
 .board_write .title dd,
 .board_write .writer dt,
 .board_write .writer dd {
-	vertical-aglin: middke;
+	vertical-aglin: middle;
 	font-size: 1.4rem;
 }
 
