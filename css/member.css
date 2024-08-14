@@ -1,0 +1,108 @@
+@charset "UTF-8";
+
+/* General Body Styles */
+body {
+	width: 100%;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('../images/background1.jpg') !important; /* 강제로 적용 */
+    background-size: cover; 
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container for the login box */
+.container {
+    width: 100%;
+    max-width: 500px; /* Slightly wider for better usability */
+    padding: 30px;
+    background: #ffffff; /* White background for the login box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    border-radius: 12px; /* Rounded corners for a modern look */
+    text-align: center;
+}
+
+/* Header and Titles */
+h2 {
+    margin: 0 0 20px;
+    font-size: 24px; /* Larger title font for emphasis */
+    color: #333; /* Darker text color for better readability */
+}
+
+/* Input Fields */
+.textbox {
+    margin: 15px 0;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd; /* Light border for input fields */
+    border-radius: 6px; /* Rounded corners for input fields */
+    box-sizing: border-box; /* Ensures padding is included in total width */
+    font-size: 16px;
+}
+
+.textbox.gender {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.textbox.gender label {
+    margin: 0 15px;
+}
+
+.textbox.gender input[type="radio"] {
+    margin: 0 5px;
+}
+
+/* Buttons */
+.btn, .logout-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 6px; /* Rounded corners for buttons */
+    background-color: green; /* YouTube's red color */
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s; /* Smooth transition for hover effect */
+}
+
+.btn:hover, .logout-btn:hover {
+    background-color: green; /* Darker red on hover */
+}
+
+/* Links and Text */
+p {
+    margin: 10px 0;
+    font-size: 14px;
+    color: #555; /* Darker gray for text */
+}
+
+a {
+    color: #1a73e8; /* Google Blue color for links */
+    text-decoration: none;
+    font-weight: bold;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Login/Registration Box Styles */
+.login-box, .register-box {
+    text-align: center;
+}
+
+/* Specific Styles for Header Icons */
+.header_icons #my_id {
+    color: #63CC63;
+    margin-right: 10px;
+}
