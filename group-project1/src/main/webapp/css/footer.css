@@ -1,0 +1,130 @@
+/* footer {
+    background-color: #080808;
+    border-top: 1px solid #ccc;
+}
+footer .inner {
+    padding: 40px 0 60px 0;
+}
+footer .inner div.menu{
+    display: flex;
+    justify-content: center;
+}
+footer .inner div.menu p::before {
+    content: "";
+    width: 3px;
+    height: 3px;
+    background-color: #ccc;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: -1px;
+}
+footer .inner div.menu p:last-child:before {
+    display: none;
+}
+footer .inner div.menu p {
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 100;
+    padding: 15px;
+    display: block;
+}
+footer .name {   
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+footer .name .btn {
+    font-size: 14px;
+    margin-right: 10px;
+}
+footer .name .btn:last-child {
+    margin-right: 0px;
+}
+footer .info {
+    margin-top: 30px;
+    text-align: center;
+}
+footer .info span {
+    color: #ccc;
+    font-size: 12px;
+    margin-right: 20px;
+}
+footer .info span:last-child {
+    margin-right: 0;
+}
+footer .copyright {
+    color: #999;
+    font-size: 12px;
+    text-align: center;
+    margin-top: 12px;
+}
+footer .logo {
+    margin: 30px auto;
+} */
+.footer .inner ul.menu {
+    display: flex;
+}
+.footer .inner ul.menu p {
+    position: relative;
+}
+.footer .inner ul.menu li::before {
+    content: "";
+    width: 3px;
+    height: auto;
+    background-color: #555;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto 0;
+    right: -1px;
+}
+.footer .inner ul.menu li:last-child:before {
+    display: none;
+}
+.footer .inner ul.menu p a {
+    color: #030303;
+    font-size: 15px;
+    font-weight: 60;
+    padding: 10px;
+    display: block;
+}
+
+.section {
+    padding: 105px;
+}
+.inner {
+    min-height: 28vh;
+    position: relative;
+    width: 60%; 
+}
+
+.section {
+    padding-bottom: 110px;
+}
+.footer {
+    width: 97%;
+    height: 30px;
+    bottom: 10px;
+    position: absolute;
+    border-top: 1px solid #c4c4c4;
+    padding-top: 15px;
+    font-size: 15px;
+}
+
+.footer .name p{
+    margin-top: 20px;
+    display: block;
+    justify-content: baseline;
+}
+.footer .inner div.name {
+    display: flex;
+}
+.footer .name p{
+    font-size: 14px;
+    margin-right: 7px;
+}
+.footer .name .p:last-child {
+    margin-right: 0px;
+}

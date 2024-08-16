@@ -1,0 +1,49 @@
+.video-container {
+    list-style: none; /* 목록의 기본 점 제거 */
+    padding: 0;
+    margin: 0;
+    
+    display: flex;
+    flex-wrap: wrap; /* 여러 줄로 표시되도록 */
+    gap: 15px; /* 아이템 간의 간격 설정 */
+}
+
+.video-container .video-item {
+    margin: 0; /* 기본 마진 제거 */
+    width: calc(33.33% - 15px); /* 3열로 설정 (여백 고려) */
+    
+    display: flex;
+    flex-direction: column; /* 수직 방향으로 배치 */
+    align-items: center; /* 중앙 정렬 */
+    border: 1px solid #ddd; /* 경계선 추가 */
+    border-radius: 8px; /* 모서리 둥글게 */
+    overflow: hidden; /* 내용이 경계선 바깥으로 넘치지 않도록 */
+    background-color: #fff; /* 배경색 */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 약간의 그림자 효과 */
+}
+
+.video-item a {
+    text-decoration: none; /* 링크의 밑줄 제거 */
+    width: 100%; /* 링크 너비를 전체로 설정 */
+    display: flex;
+    justify-content: center; /* 동영상 중앙 정렬 */
+}
+
+.video-item video {
+    width: 100%; /* 동영상이 부모 요소의 너비에 맞게 조정됨 */
+    height: auto; /* 비율 유지 */
+    max-width: 600px; /* 최대 너비를 300px로 설정 */
+    border-bottom: 1px solid #ddd; /* 동영상과 제목 사이의 경계선 */
+}
+
+.video-title {
+    margin-top: 8px; /* 동영상과 제목 사이의 간격 */
+    text-align: center; /* 제목 중앙 정렬 */
+    width: 100%; /* 제목 너비를 전체로 설정 */
+    box-sizing: border-box; /* 제목의 너비와 여백 포함 */
+    font-size: 14px; /* 제목 글자 크기 */
+    color: #333; /* 제목 색상 */
+    padding: 8px; /* 제목의 여백 */
+    background-color: #f9f9f9; /* 제목 배경색 */
+    border-top: 1px solid #ddd; /* 제목과 동영상 사이의 경계선 */
+}
